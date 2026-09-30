@@ -10,8 +10,11 @@ export const BLACK = "#171615";
 export const stepped = (frame: number) => Math.floor(frame / STEP) * STEP;
 
 // Held-frame wobble, like paper that was touched between exposures.
+const JITTER_SCALE = 0.25;
+
 export const jitter = (seed: string, frame: number, amount = 1) => {
-  const s = Math.floor(frame / STEP);
+  const s = Math.floor(frame / (STEP * 2));
+  amount *= JITTER_SCALE;
   return {
     x: (random(`${seed}x${s}`) - 0.5) * 3 * amount,
     y: (random(`${seed}y${s}`) - 0.5) * 3 * amount,

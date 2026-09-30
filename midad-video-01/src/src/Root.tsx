@@ -2,6 +2,7 @@ import React from "react";
 import { Composition, Still, continueRender, delayRender, getStaticFiles } from "remotion";
 import { MoodArchive, MoodNotebook, MoodPaper } from "./moods";
 import { Midad01, Midad01Props } from "./Midad01";
+import { AHMAD_STORY_FRAMES, AhmadStory } from "./AhmadStory";
 import { TOTAL_FRAMES } from "./data/midad01";
 import { fontsReady } from "./fonts";
 
@@ -16,6 +17,7 @@ export const RemotionRoot: React.FC = () => {
     <>
       <Composition id="Midad01" component={Midad01} durationInFrames={TOTAL_FRAMES} fps={30} width={1080} height={1920} defaultProps={base} />
       <Composition id="Midad01NoMusic" component={Midad01} durationInFrames={TOTAL_FRAMES} fps={30} width={1080} height={1920} defaultProps={{ ...base, withMusic: false }} />
+      <Composition id="AhmadStory" component={AhmadStory} durationInFrames={AHMAD_STORY_FRAMES} fps={30} width={1080} height={1920} defaultProps={{ withVoice: true }} />
       <Still id="MoodNotebook" component={MoodNotebook} width={1080} height={1920} />
       <Still id="MoodPaper" component={MoodPaper} width={1080} height={1920} />
       <Still id="MoodArchive" component={MoodArchive} width={1080} height={1920} />

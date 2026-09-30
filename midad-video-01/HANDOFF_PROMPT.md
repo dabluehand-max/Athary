@@ -20,7 +20,19 @@ Drive folder `1lF556ZSNscVEq2bxqXpuLsxjpB88HrBh`:
 - `IMG_7810.MOV` (192 MB) and `IMG_7808.MOV` (150 MB): long takes, Lama speaking. Her full audio can be the voiceover.
 - A take about **Frida Kahlo** (find which file; transcribe them all first).
 - `IMG_7809`–`IMG_7829`: short clips. Use any piece, audio or video.
-- `13736 3.m4a`: Ahmad's story (already edited into `audio/vo_ahmad_edit.mp3` and the `AhmadStory` video).
+- `13736 3.m4a`: Ahmad's story, used by the `AhmadStory` video. The edited file is not in git. Rebuild it into `src/public/audio/vo.mp3`:
+  ```
+  ffmpeg -i "13736 3.m4a" -filter_complex "
+  [0:a]atrim=0.45:10.45,asetpts=PTS-STARTPTS,afade=t=out:st=9.9:d=0.1[a];
+  [0:a]atrim=15.30:57.55,asetpts=PTS-STARTPTS,afade=t=in:d=0.08,afade=t=out:st=42.15:d=0.1[b];
+  [0:a]atrim=59.70:68.60,asetpts=PTS-STARTPTS,afade=t=in:d=0.08,afade=t=out:st=8.8:d=0.1[c];
+  anullsrc=r=48000:cl=mono,atrim=0:2.5[p];
+  [0:a]atrim=68.75:76.95,asetpts=PTS-STARTPTS,afade=t=in:d=0.08,afade=t=out:st=8.0:d=0.2[d];
+  anullsrc=r=48000:cl=mono,atrim=0:1.6[e];
+  [a][b][c][p][d][e]concat=n=6:v=0:a=1,highpass=f=80,afftdn=nf=-30,loudnorm=I=-16:TP=-1.5:LRA=9[out]" -map "[out]" -ar 48000 -ac 1 -b:a 192k src/public/audio/vo.mp3
+  ```
+  This drops the first take of «لو ما رسمت زيي…» (10.45–15.30 s) and the slip «تسعطعشر وردة» (57.55–59.70 s, verified by transcription), and adds a 2.5 s pause after «تدريب خارجي» so viewers can read the workshop map. Result: 73.5 s. Every beat time in `AhmadStory.tsx` is set against this file.
+  Also cut these for `AhmadStory`: `IMG_9332.PNG` (crop 600,255,2130,1792, `--mode rect --color`) → `prints/ahmad_red_artwork.png`; `IMG_6414.JPG` → `prints/ahmad_teaching.png`; `86a68668-….jpg` → `prints/ahmad_drawing.png` (both `--mode rect`); `IMG_0101.JPG` (crop 0,120,1080,1030) → `portraits/ahmad_full.png`.
 - `IMG_9634.PNG`, `IMG_9698.PNG` (12 MB each): not yet seen; probably artworks.
 
 Steps:

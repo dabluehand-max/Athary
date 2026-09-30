@@ -21,6 +21,7 @@ export const sceneFrames = (k: SceneKey) => {
 };
 
 export const MENTORS: { name: string; photo?: string }[] = [
+  { name: "أحمد حدّاد", photo: "portraits/ahmad_haddad.png" },
   { name: "لاما المدني", photo: "portraits/lama_almadani.png" },
   { name: "سامية المهدلي", photo: "portraits/samia_almahdali.png" },
   { name: "حذيفة حجازي", photo: "portraits/hudhaifa_hijazi.png" },
@@ -28,7 +29,6 @@ export const MENTORS: { name: string; photo?: string }[] = [
   { name: "أحمد سلام", photo: "portraits/ahmad_salam.png" },
   { name: "رؤى صحاف", photo: "portraits/ruaa_sahhaf.png" },
   { name: "نورة شقير" },
-  { name: "ماريا ميان", photo: "portraits/maria_mian.png" },
   { name: "خيرية رفعت", photo: "portraits/khairia_rifaat.png" },
 ];
 

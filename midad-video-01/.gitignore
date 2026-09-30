@@ -5,3 +5,5 @@ audio/
 out/
 src/node_modules/
 src/out/
+src/public/img/
+src/public/audio/

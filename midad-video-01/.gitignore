@@ -1,0 +1,9 @@
+# personal photos / derived images stay out of git
+assets/
+refs/
+audio/
+out/
+src/node_modules/
+src/out/
+src/public/img/
+src/public/audio/

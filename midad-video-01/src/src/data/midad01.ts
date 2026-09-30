@@ -24,7 +24,7 @@ export const MENTORS: { name: string; photo?: string }[] = [
   { name: "لاما المدني", photo: "portraits/lama_almadani.png" },
   { name: "سامية المهدلي", photo: "portraits/samia_almahdali.png" },
   { name: "حذيفة حجازي", photo: "portraits/hudhaifa_hijazi.png" },
-  { name: "حفصة الخضيري" },
+  { name: "حفصة الخضيري", photo: "portraits/hafsa_alkhudairi.png" },
   { name: "أحمد سلام", photo: "portraits/ahmad_salam.png" },
   { name: "رؤى صحاف", photo: "portraits/ruaa_sahhaf.png" },
   { name: "نورة شقير" },

@@ -268,7 +268,7 @@ export const MentorsScene: React.FC<{ mentors: { name: string; photo?: string }[
         const y = rows[Math.floor(i / 3)] + (random(`my${i}`) - 0.5) * 30;
         const rot = (random(`mr${i}`) - 0.5) * 9;
         const at = 6 + i * 9;
-        const from = (["right", "top", "left"] as const)[i % 3];
+        const from = (["right", "bottom", "left"] as const)[i % 3];
         return (
           <React.Fragment key={m.name}>
             {m.photo ? (

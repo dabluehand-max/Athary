@@ -119,8 +119,8 @@ export const AhmadStory: React.FC<{ withVoice: boolean }> = ({ withVoice }) => {
         <Page />
         <Say text="٢٠١٤، جدة" at={s(0.2)} y={260} size={120} color={MIDAD.greenDeep} />
         <Say text="وريت أعمالي لبروفيسور ناقد فني" at={s(2.1)} y={420} size={54} font={FONT_TYPE} />
-        <Cut src="prints/inking.png" x={360} y={900} w={380} rot={-5} at={s(2.3)} from="right" seed="sk1" />
-        <Cut src="prints/drawing_topdown.png" x={720} y={950} w={360} rot={4} at={s(2.8)} from="left" seed="sk2" />
+        <Cut src="prints/inking.png" x={360} y={900} w={380} rot={-5} at={s(0.35)} from="right" seed="sk1" />
+        <Cut src="prints/drawing_topdown.png" x={720} y={950} w={360} rot={4} at={s(0.7)} from="left" seed="sk2" />
         <Chip text="قال لي: حلوة…" at={s(5.0)} x={540} y={1330} bg={MIDAD.pink} fg={MIDAD.ink} size={56} rot={-2} />
         <Say text="بس هذي سكتشات، ما تنعرض في معارض فنية" at={s(7.05)} y={1520} size={52} font={FONT_TYPE} color={MIDAD.greenDeep} />
         <Blob x={900} y={1780} r={90} color={MIDAD.orange} at={s(7.05)} />
@@ -176,7 +176,7 @@ export const AhmadStory: React.FC<{ withVoice: boolean }> = ({ withVoice }) => {
           const col = i % 4, row = Math.floor(i / 4);
           const x = 925 - col * 257;
           const y = 530 + row * 450;
-          const at = s(1.9) + i * 5;
+          const at = s(0.6) + i * 5;
           return (
             <React.Fragment key={name}>
               {src ? (
